@@ -7,12 +7,6 @@ loan_model = pickle.load(open('loan_model.sav', 'rb'))
 
 mail_model = pickle.load(open('mail_model.sav', 'rb'))
 
-'''
-_model = pickle.load(open('_model.sav', 'rb'))
-
-_model = pickle.load(open('_model.sav', 'rb'))
-'''
-
 with st.sidebar:
 
     selected = option_menu('Multiple Prediction Systems',
@@ -103,72 +97,3 @@ if (selected == 'Mail Prediction'):
           mail_result = 'This is a ham mail!'
 
     st.success(mail_result)
-
-
-'''
-if (selected == '     Prediction'):
-
-    # page title
-    st.title('    Prediction using ML')
-
-
-    # getting the input data from the user
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        Pregnancies = st.text_input('    ')
-
-    with col2:
-        Glucose = st.text_input('     ')
-
-    with col3:
-        BloodPressure = st.text_input('      ')
-
-    diab_diagnosis = ''
-
-    # creating a button for Prediction
-
-    if st.button('     Test Result'):
-        diab_prediction = diabetes_model.predict([[     ,    ,    ]])
-
-        if (_prediction[0] == 1):
-          diab_diagnosis = '  '
-        else:
-            _diagnosis = ' '
-
-    st.success(  _diagnosis)
-
-
-if (selected == '     Prediction'):
-
-    # page title
-    st.title('    Prediction using ML')
-
-
-    # getting the input data from the user
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        Pregnancies = st.text_input('    ')
-
-    with col2:
-        Glucose = st.text_input('     ')
-
-    with col3:
-        BloodPressure = st.text_input('      ')
-
-    diab_diagnosis = ''
-
-    # creating a button for Prediction
-
-    if st.button('     Test Result'):
-        diab_prediction = diabetes_model.predict([[     ,    ,    ]])
-
-        if (_prediction[0] == 1):
-          diab_diagnosis = '  '
-        else:
-            _diagnosis = ' '
-
-    st.success(  _diagnosis)
-'''
-
