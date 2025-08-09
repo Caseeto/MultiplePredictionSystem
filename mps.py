@@ -26,7 +26,6 @@ if (selected == 'Loan Prediction'):
 
     # page title
     st.title('Loan Prediction using ML')
-,Loan_Amount_Term,Credit_History,Property_Area
 
 
     # getting the input data from the user
@@ -172,3 +171,4 @@ if (selected == '     Prediction'):
 
     st.success(  _diagnosis)
 '''
+
