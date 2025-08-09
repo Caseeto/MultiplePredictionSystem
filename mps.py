@@ -91,11 +91,12 @@ if (selected == 'Mail Prediction'):
         mail_prediction = mail_model.predict([[Message]])
 
         if (mail_prediction[0] == 1):
-          mail_result = 'This is a spam mail!'
-        else:
           mail_result = 'This is a ham mail!'
+        else:
+          mail_result = 'This is a spam mail!'
 
     st.success(mail_result)
+
 
 
 
