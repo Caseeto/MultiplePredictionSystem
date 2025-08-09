@@ -83,6 +83,10 @@ if (selected == 'Mail Prediction'):
     # getting the input data from the user
 
     Message = st.text_input('Type your message for the mail:')
+    # Example with separate vectorizer
+    message_transformed = vectorizer.transform([Message])  # Keep inside a list
+    mail_prediction = mail_model.predict(message_transformed)
+
 
     mail_result = ''
 
@@ -97,4 +101,5 @@ if (selected == 'Mail Prediction'):
           mail_result = 'This is a ham mail!'
 
     st.success(mail_result)
+
 
