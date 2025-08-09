@@ -26,37 +26,37 @@ if (selected == 'Loan Prediction'):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        Gender = st.text_input('Gender')
+        Gender = st.text_input('Gender(Female:0, Male:1)')
 
     with col2:
-        Married = st.text_input('Married')
+        Married = st.text_input('Married(No:0, Yes:1)')
 
     with col3:
-        Dependents = st.text_input('Dependents')
+        Dependents = st.text_input('Number of dependents')
 
     with col1:
-        Education = st.text_input('Education')
+        Education = st.text_input('Graduate(No:0, Yes:1)')
 
     with col2:
-        Self_Employed = st.text_input('Self_Employed')
+        Self_Employed = st.text_input('Self Employed(No:0, Yes:1)')
 
     with col3:
-        ApplicantIncome = st.text_input('ApplicantIncome')
+        ApplicantIncome = st.text_input('Applicant Income(Amount)')
 
     with col1:
-        CoapplicantIncome = st.text_input('CoapplicantIncome')
+        CoapplicantIncome = st.text_input('Coapplicant Income(Amount)')
 
     with col2:
-        LoanAmount = st.text_input('LoanAmount')
+        LoanAmount = st.text_input('Loan(Amount)')
 
     with col3:
-        Loan_Amount_Term = st.text_input('Loan_Amount_Term')
+        Loan_Amount_Term = st.text_input('Loan Amount Term(Days)')
 
     with col1:
-        Credit_History = st.text_input('Credit_History')
+        Credit_History = st.text_input('Credit History(No:0, Yes:1)')
 
     with col2:
-        Property_Area = st.text_input('Property_Area')
+        Property_Area = st.text_input('Property Area(Rural:0, Semi-Urban:1, Urban:2')
 
     loan_result = ''
 
@@ -97,3 +97,4 @@ if (selected == 'Mail Prediction'):
           mail_result = 'This is a ham mail!'
 
     st.success(mail_result)
+
