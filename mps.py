@@ -5,7 +5,9 @@ from streamlit_option_menu import option_menu
 
 loan_model = pickle.load(open('loan_model.sav', 'rb'))
 
-mail_model = pickle.load(open('mail_model.sav', 'rb'))
+
+vectorizer = pickle.load(open("vectorizer.sav", "rb"))
+mail_model = pickle.load(open("mail_model.sav", "rb"))
 
 with st.sidebar:
 
@@ -82,14 +84,16 @@ if (selected == 'Mail Prediction'):
 
     # getting the input data from the user
 
-    Message = st.text_input('Type your message for the mail:')
+    #Message = st.text_input('Type your message for the mail:')
+    Message = "Your message text here"
 
     mail_result = ''
 
     # creating a button for Prediction
 
     if st.button('Mail Test Result'):
-        mail_prediction = mail_model.predict([Message])
+        Message_vector = vectorizer.transform([Message])  # convert to numerical form 
+        mail_prediction = mail_model.predict(Message_vector)
 
         if (mail_prediction[0] == 1):
           mail_result = 'This is a spam mail!'
@@ -97,6 +101,7 @@ if (selected == 'Mail Prediction'):
           mail_result = 'This is a ham mail!'
 
     st.success(mail_result)
+
 
 
 
