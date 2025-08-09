@@ -4,15 +4,13 @@ from streamlit_option_menu import option_menu
 
 
 loan_model = pickle.load(open('loan_model.sav', 'rb'))
-mail_model = pickle.load(open("mail_model.sav", "rb"))
 
 with st.sidebar:
 
     selected = option_menu('Multiple Prediction Systems',
 
-                          ['Loan Prediction',
-                           'Mail Prediction'],
-                          icons=['cash-coin', 'envelope-at'],
+                          ['Loan Prediction'],
+                          icons=['cash-coin'],
                           default_index=0)
 
 if (selected == 'Loan Prediction'):
@@ -70,38 +68,3 @@ if (selected == 'Loan Prediction'):
           loan_result = 'Loan application is rejected!'
 
     st.success(loan_result)
-
-
-
-if (selected == 'Mail Prediction'):
-
-    # page title
-    st.title('Mail Prediction using ML')
-
-
-    # getting the input data from the user
-
-    Message = st.text_input('Type your message for the mail:')
-
-    mail_result = ''
-
-    # creating a button for Prediction
-
-    if st.button('Mail Test Result'):
-        mail_prediction = mail_model.predict([[Message]])
-
-        if (mail_prediction[0] == 1):
-          mail_result = 'This is a ham mail!'
-        else:
-          mail_result = 'This is a spam mail!'
-
-    st.success(mail_result)
-
-
-
-
-
-
-
-
-
