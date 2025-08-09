@@ -88,7 +88,7 @@ if (selected == 'Mail Prediction'):
     # creating a button for Prediction
 
     if st.button('Mail Test Result'):
-        mail_prediction = mail_model.predict(Message)
+        mail_prediction = mail_model.predict([[Message]])
 
         if (mail_prediction[0] == 1):
           mail_result = 'This is a spam mail!'
@@ -96,6 +96,7 @@ if (selected == 'Mail Prediction'):
           mail_result = 'This is a ham mail!'
 
     st.success(mail_result)
+
 
 
 
